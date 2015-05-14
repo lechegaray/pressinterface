@@ -26,5 +26,17 @@ var loginData = [
 ];
 
 Template.login.helpers({
-    workCenters: loginData
+    workCenters: loginData,
+    cycles: function() {
+        return Cycles.find();
+    }
+});
+
+
+Template.login.events({
+    "submit .workcenterSelection": function(event){
+        var text = event.target.text.value;
+        console.log(text);
+        return false;
+    }
 });

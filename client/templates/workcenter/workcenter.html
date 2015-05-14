@@ -1,0 +1,14 @@
+<template name="workcenter">
+    <h3>Assign a Machine:</h3>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            Machine <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            {{#each workCenters}}
+                <li><a href="#">{{name}}</a></li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
