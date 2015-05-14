@@ -28,7 +28,7 @@ var loginData = [
 Template.login.helpers({
     workCenters: loginData,
     cycles: function() {
-        return Cycles.find();
+        return Cycles.find({}, {sort: {'CycleTimeStamp': -1}});
     }
 });
 
