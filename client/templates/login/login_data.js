@@ -35,8 +35,12 @@ Template.login.helpers({
 
 Template.login.events({
     "submit .workcenterSelection": function(event){
+        event.preventDefault();
+        console.log(event);
         var text = event.target.text.value;
         console.log(text);
+        currentYear = Meteor.call('getCurrentYear');
+        console.log("second hi")  ;
         return false;
     }
 });
