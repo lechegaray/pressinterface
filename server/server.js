@@ -1,5 +1,11 @@
-Meteor.publish('cycles-recent', function publishFunction () {
-  return Cycles.find({PressNumber: '1'}, {sort: {CycleTimeStamp: -1}, limit: 50});
+// Meteor.publish('cycles-recent', function publishFunction () {
+//   return Cycles.find({PressNumber: '1'}, {sort: {CycleTimeStamp: -1}, limit: 50});
+// });
+
+Meteor.publish('cycles-recent', function () {
+  var startOfDay = moment().startOf('day').format("YYYY-MM-DD h:mm:ss.SSS");
+  //console.log(startOfDay);
+  return Cycles.find({CycleTimeStamp: { $gte: startOfDay}});
 });
 
 
